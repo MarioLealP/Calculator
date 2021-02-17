@@ -134,7 +134,3 @@ MultiButton.grid(row = 4, column = 4)
 DivButton.grid(row = 5, column = 4)
 
 root.mainloop()
-
-Number1 = 0
-Number2 = 0
-Result = 0
