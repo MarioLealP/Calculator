@@ -13,78 +13,6 @@ Number1.grid(row = 0,column=0, columnspan = 3, padx = 10, pady = 10)
 Number2 = Entry(root, width = 45, borderwidth = 5)
 Number2.grid(row = 1,column=0, columnspan = 3, padx = 10, pady = 10)
 
-<<<<<<< Updated upstream
-Number1 = 0
-Number2 = 0
-Result = 0
-
-def Add(N1, N2):
-    Result = N1 + N2
-    return(Result)
-
-def Minus(N1, N2):
-    Result = N1 - N2
-    return(Result)
-
-def Multiply(N1, N2):
-    Result = N1 * N2
-    return(Result)
-
-def Divide(N1, N2):
-    Result = N1 / N2
-    return(Result)
-
-def Input1():
-    typee = False
-    while typee == False:
-        try:
-            Number1 = float(input("Introduce 1st Number"))
-            typee == True
-            break
-        except TypeError:
-            Input2()
-        else:
-            Input2()
-    return(Number1)
-
-def Input2():
-    typee = False
-    while typee == False:
-        try:
-            Number2 = float(input("Introduce 2nd Number"))
-            typee == True
-            break
-        except TypeError:
-            Input2()
-        else:
-            Input2()
-    return(Number2)
-
-def Operation():
-
-    operator = input("Input your operator").lower()
-    if (operator == "+"):
-        N1 = Input1()
-        N2 = Input2()
-        print(Add(N1, N2))
-    elif (operator == "*" or operator == "x"):
-        N1 = Input1()
-        N2 = Input2()
-        print(Multiply(N1, N2))
-    elif (operator == "-"):
-        N1 = Input1()
-        N2 = Input2()
-        print(Minus(N1, N2))
-    elif (operator == "/"):
-        N1 = Input1()
-        N2 = Input2()
-        print(Divide(N1, N2))
-    else:
-        Operation()
-
-Operation()
-
-=======
 def Add():
     global Result
     Result = float(FirstNumber) + float(Number2.get())
@@ -122,6 +50,14 @@ def button_click(number):
 def button_clear():
     Number1.delete(0, END)
     Number2.delete(0, END)
+    global FirstNumber
+    global Signal
+    global Answer
+    global i
+    FirstNumber = 0
+    Signal = None
+    Answer = "Unused"
+    i = 0
 
 def button_operation(signal):
     global Result
@@ -202,4 +138,3 @@ root.mainloop()
 Number1 = 0
 Number2 = 0
 Result = 0
->>>>>>> Stashed changes
