@@ -2,25 +2,25 @@ from tkinter import *
 
 root = Tk()
 
-Number1 = 0
-Number2 = 0
-Result = 0
+def Add():
+    Result = float(Number1.get()) + float(Number2.get())
+    ResultLabel = Label(root, text="Result: " + str(Result))
+    ResultLabel.grid(row = 1)
 
-def Add(N1, N2):
-    Result = N1 + N2
-    return(Result)
+def Minus():
+    Result = float(Number1.get()) - float(Number2.get())
+    ResultLabel = Label(root, text="Result: " + str(Result))
+    ResultLabel.grid(row = 1)
 
-def Minus(N1, N2):
-    Result = N1 - N2
-    return(Result)
+def Multiply():
+    Result = float(Number1.get()) * float(Number2.get())
+    ResultLabel = Label(root, text="Result: " + str(Result))
+    ResultLabel.grid(row = 1)
 
-def Multiply(N1, N2):
-    Result = N1 * N2
-    return(Result)
-
-def Divide(N1, N2):
-    Result = N1 / N2
-    return(Result)
+def Divide():
+    Result = float(Number1.get()) / float(Number2.get())
+    ResultLabel = Label(root, text="Result: " + str(Result))
+    ResultLabel.grid(row = 1)
 
 def Input1():
     typee = False
@@ -70,5 +70,25 @@ def Operation():
     else:
         Operation()
 
-Operation()
 
+Number1 = Entry(root, width = 15, borderwidth = 5)
+Number1.grid(row = 0)
+
+Number2 = Entry(root, width = 15, borderwidth = 5)
+Number2.grid(row = 2)
+
+PlusButton = Button(root, text="+", padx = 15, pady = 15, bg="Light Grey", command=Add)
+MinusButton = Button(root, text="-", padx = 15, pady = 15, bg="Light Grey", command=Minus)
+MultiButton = Button(root, text="*", padx = 16, pady = 15, bg="Light Grey", command=Multiply)
+DivButton = Button(root, text="/", padx = 15, pady = 15, bg="Light Grey", command=Divide)
+
+PlusButton.grid(row = 3, column = 0)
+MinusButton.grid(row = 3, column = 1)
+MultiButton.grid(row = 4, column = 0)
+DivButton.grid(row = 4, column = 1)
+
+root.mainloop()
+
+Number1 = 0
+Number2 = 0
+Result = 0
